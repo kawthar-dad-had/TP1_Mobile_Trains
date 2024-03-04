@@ -1,0 +1,264 @@
+<!--
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity"
+    android:background="#F4F4F4">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consultation des Horaires de Train"
+        android:textSize="24sp"
+        android:textColor="#2196F3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutInputs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/textViewTitle"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/editTextDepart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ville de Départ"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:backgroundTint="#2196F3"
+            android:layout_marginBottom="12dp"
+            android:background="@color/black"/>
+
+        <EditText
+            android:id="@+id/editTextArrivee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ville d'Arrivée"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:backgroundTint="#2196F3"
+            android:layout_marginBottom="12dp"
+            android:background="@color/pink"/>
+
+        <EditText
+            android:id="@+id/editTextDateDepart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date de Départ (JJ/MM/AAAA)"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:backgroundTint="#2196F3"
+            android:layout_marginBottom="12dp"
+            android:background="@color/pink"/>
+
+        <EditText
+            android:id="@+id/editTextDateArrivee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date d'Arrivée (JJ/MM/AAAA)"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:backgroundTint="#2196F3"
+            android:layout_marginBottom="12dp"
+            android:background="@color/pink"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnConsulterHoraires"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consulter les Horaires"
+        android:textSize="18sp"
+        android:background="#2196F3"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/linearLayoutInputs"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#2196F3"
+        android:elevation="4dp"/>
+
+    <ListView
+        android:id="@+id/listePropositions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btnConsulterHoraires"
+        android:layout_marginTop="20dp"/>
+</RelativeLayout>
+    -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_color"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="55dp"
+        android:fontFamily="@font/dancing_bold"
+        android:gravity="center"
+        android:text="TrainLine"
+        android:textColor="@color/white"
+        android:textSize="46sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="35dp"
+        android:paddingBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/round_border"
+        android:layout_below="@+id/txt_name">
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:id="@+id/editTextDepart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="Ville de Depart"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/app_color">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/villeTextD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableTint="@color/app_color"
+                android:drawablePadding="20dp"
+                android:padding="20dp"
+                android:inputType="text"
+                android:drawableStart="@drawable/baseline_add_location_24"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:id="@+id/editTextArrivee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="Ville d'Arrivee"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/app_color">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/villeTextA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableTint="@color/app_color"
+                android:drawablePadding="20dp"
+                android:padding="20dp"
+                android:inputType="textEmailAddress"
+                android:drawableStart="@drawable/baseline_add_location_24"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:id="@+id/editTextDateDepart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="Date d'Arrivee"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/app_color">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableTint="@color/app_color"
+                android:drawablePadding="20dp"
+                android:padding="20dp"
+                android:inputType="textEmailAddress"
+                android:drawableStart="@drawable/baseline_access_time_filled_24"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:id="@+id/editTextDateArrivee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="Date d'Arrivee"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:hintTextColor="@color/black"
+            app:boxStrokeColor="@color/app_color">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableTint="@color/app_color"
+                android:drawablePadding="20dp"
+                android:padding="20dp"
+                android:inputType="textEmailAddress"
+                android:drawableStart="@drawable/baseline_access_time_filled_24"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btnValider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/btn_color"
+            android:text="Valider"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:fontFamily="@font/dm_medium"
+            android:textAllCaps="true">
+
+        </Button>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
